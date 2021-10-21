@@ -23,9 +23,9 @@
 # SOFTWARE.
 #
 # Run this by
-# sudo bash python.sh [3.9.6]
+# sudo bash python.sh 3.11.0
 # or via github by
-# wget -qO - https://raw.githubusercontent.com/tvdsluijs/raspberry_python_sh_install/main/python.sh | sudo bash -s [3.9.6]
+# wget -qO - https://raw.githubusercontent.com/tvdsluijs/raspberry_python_sh_install/main/python.sh | sudo bash -s 3.10.0
 
 install_python () {
 
@@ -37,9 +37,9 @@ install_python () {
     old_version=$(python -c 'import platform; print(platform.python_version())')
 
     if [ "$(printf '%s\n' "$new_version" "$old_version" | sort -V | head -n1)" = "$new_version" ]; then
-    echo "You are trying to install an older version than your current version!"
-    echo "Exiting this script!"
-    exit 0
+        echo "You are trying to install an older version than your current version!"
+        echo "Exiting this script!"
+        exit 0
     fi
 
     echo "Your current Python version is: ${old_version}"
@@ -64,11 +64,11 @@ install_python () {
     ./configure --enable-optimizations --prefix=/usr < /dev/null
     make < /dev/null
     echo $("Install the new Python version " $new_version)
-    sudo make altinstall < /dev/null
+    make altinstall < /dev/null
 
     echo "Let's cleanup!"
     cd ..
-    sudo rm -r ${Python-$new_version}
+    rm -r ${Python-$new_version}
     rm -rf ${file}
 
     new_python_version=$(python -c 'import platform; print(platform.python_version())')
@@ -98,8 +98,8 @@ install_python () {
 }
 
 if [ -z "$1" ]; then
-    echo "Sorry you did not provide a version number. (eg. 3.9.7)"
-    echo "bash python.sh 3.9.7"
+    echo "Sorry you did not provide a version number. (eg. 3.10.0)"
+    echo "bash python.sh 3.10.0"
 else
     install_python $1
 fi
