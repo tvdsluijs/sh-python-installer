@@ -40,7 +40,7 @@ wget -qO - https://raw.githubusercontent.com/tvdsluijs/sh-python-installer/main/
 * [stephen-mw](https://github.com/stephen-mw) for adding some small but great additions
 
 ## Versions
-
+* 1.0.2 / 20 April 2022 (some minor changed done by Stephen-mw)
 * 1.0.1 / 21 Okt 2021 (Minor changes with Sudo)
 * 1.0.0 / 26 sept 2021 (First Release)
 
