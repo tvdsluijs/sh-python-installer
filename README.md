@@ -36,7 +36,8 @@ wget -qO - https://raw.githubusercontent.com/tvdsluijs/sh-python-installer/main/
 
 
 ## Thanks to / Credits
-* Henry (e78com.com)
+* [Henry](https://e78com.com) helped out with some sizzle
+* [stephen-mw](https://github.com/stephen-mw) for adding some small but great additions
 
 ## Versions
 
