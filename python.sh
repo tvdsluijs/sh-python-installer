@@ -25,12 +25,11 @@
 # Run this by
 # sudo bash python.sh 3.11.0
 # or via github by
-# wget -qO - https://raw.githubusercontent.com/tvdsluijs/raspberry_python_sh_install/main/python.sh | sudo bash -s 3.10.0
+# wget -qO - https://raw.githubusercontent.com/tvdsluijs/sh-python-installer/main/python.sh | sudo bash -s 3.10.0
 
 set -euo pipefail
 
 install_python () {
-
     new_version="$1"
     py_main_version=${new_version::-2}
     file="Python-${new_version}.tar.xz"
@@ -70,11 +69,17 @@ install_python () {
 
     echo "Let's cleanup!"
     cd ..
-    rm -r ${Python-$new_version}
-    rm -rf ${file}
+    rm -rf "Python-$new_version"
+    rm -r ${file}
+
+    echo "Let's install PIP"
+    apt -qq install -y python3-pip < /dev/null
+
+    echo "updating pip..."
+    python${py_main_version} -m pip install --upgrade pip
 
     new_python_version=$(python -c 'import platform; print(platform.python_version())')
-    if [ $old_python_version = $new_version ]; then
+    if [ $new_python_version = $new_version ]; then
         echo "Version okay!"
     else
         echo "Okay, let's try to get your new installed to be the default!"
@@ -82,14 +87,10 @@ install_python () {
         update-alternatives --install /usr/bin/python3 python3 /usr/bin/python${py_main_version} 1
     fi
 
-    echo "Let's install PIP"
-    apt -qq install -y python3-pip < /dev/null
-
     clear
     echo "All Done!"
     echo "Your new Python version should be ${new_version}"
     echo "You can check this yourself by 'python --version'"
-    echo "It might be a good idea to update pip with : 'python pip install --upgrade pip'"
     echo ""
     echo "Do not forget to give me a tip/donation for my hard :-) work!"
     echo "https://itheo.tech/donate"
