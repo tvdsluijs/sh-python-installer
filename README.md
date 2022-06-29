@@ -42,6 +42,7 @@ wget -qO - https://raw.githubusercontent.com/tvdsluijs/sh-python-installer/main/
 * [Kevin Ku](https://www.pexels.com/nl-nl/foto/zwarte-gekweekte-brillen-voor-laptopcomputer-577585/)
 
 ## Versions
+* 1.1.0 / 29 June 2022 (some minor but very good suggestions by TonyLHansen, created a Docker file to test it instant.)
 * 1.0.2 / 20 April 2022 (some minor changed done by Stephen-mw)
 * 1.0.1 / 21 Okt 2021 (Minor changes with Sudo)
 * 1.0.0 / 26 sept 2021 (First Release)
@@ -56,7 +57,7 @@ This script updates your Raspberry Pi OS !!! If you don't want to update the OS 
 
 ## License & Copyrights
 
-Copyright (c) 2021 [itheo.tech](https://itheo.tech/) / Theo van der Sluijs
+Copyright (c) 2022 [itheo.tech](https://itheo.tech/) / Theo van der Sluijs
 
 
 
@@ -85,3 +86,9 @@ Get your copy of the [MIT](https://choosealicense.com/licenses/mit/) License.
 ## Support
 
 For support, go to [itheo.tech](https://itheo.tech/) and contact me!
+
+
+## Donations
+
+Please do not forget to donate!
+https://donorbox.org/tvdsluijs-github

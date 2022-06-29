@@ -87,13 +87,13 @@ install_python () {
         update-alternatives --install /usr/bin/python3 python3 /usr/bin/python"${py_main_version}" 1
     fi
 
-    clear
+    # clear
     echo "All Done!"
     echo "Your new Python version should be ${new_version}"
     echo "You can check this yourself by 'python --version'"
     echo ""
     echo "Do not forget to give me a tip/donation for my hard :-) work!"
-    echo "https://itheo.tech/donate"
+    echo "https://donorbox.org/tvdsluijs-github"
     echo ""
     echo "Any questions?"
     echo "Visit my site and contact me on my contact page https://itheo.tech/contact"

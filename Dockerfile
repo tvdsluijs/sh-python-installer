@@ -6,3 +6,5 @@
 #**************************************
 FROM python:3.7.13-slim
 
+RUN apt-get update \
+ && apt-get install wget unzip zip -y
