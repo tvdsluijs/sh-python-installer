@@ -45,11 +45,16 @@ install_python () {
 
     echo "Your current Python version is: ${old_version}"
 
-    echo "Updating & upgrade system"
+    echo "Updating & upgrading system"
     apt -qq update && apt --yes --force-yes upgrade < /dev/null
 
     echo "Installing system essentials"
-    apt -qq install -y wget build-essential checkinstall < /dev/null
+    if [[ $(command -v checkinstall) ]]; then
+        apt -qq install -y wget build-essential checkinstall < /dev/null
+    else
+        apt -qq install -y wget build-essential < /dev/null
+    fi
+
 
     echo "Installing Python essentials"
     apt -qq install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev < /dev/null
