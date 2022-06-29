@@ -50,8 +50,10 @@ install_python () {
 
     echo "Installing system essentials"
     if [[ $(command -v checkinstall) ]]; then
+        echo "found"
         apt -qq install -y wget build-essential checkinstall < /dev/null
     else
+        echo "not found"
         apt -qq install -y wget build-essential < /dev/null
     fi
 
