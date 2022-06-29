@@ -48,6 +48,9 @@ install_python () {
     echo "Updating system"
     apt -qq update < /dev/null
 
+    echo "Upgrading system"
+    apt -qq upgrade < /dev/null
+
     echo "Installing system essentials"
     apt -qq install -y wget build-essential checkinstall < /dev/null
 

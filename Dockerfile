@@ -4,7 +4,7 @@
 # MIT License
 # Dockerfile to test the python script
 #**************************************
-FROM python:3.7.13-slim
+FROM python:3.7-buster
 
-RUN apt-get update \
- && apt-get install wget unzip zip -y
+# RUN apt-get update \
+#  && apt-get install wget unzip zip -y
