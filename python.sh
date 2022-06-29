@@ -31,7 +31,7 @@ set -euo pipefail
 
 install_python () {
     new_version="$1"
-    py_main_version=${new_version::-2}
+    py_main_version=$(echo "$new_version" | sed '/[.].*[.].*/s/[.][^.]*$//')
     file="Python-${new_version}.tar.xz"
     url="https://www.python.org/ftp/python/${new_version}/${file}"
 
@@ -55,36 +55,36 @@ install_python () {
     apt -qq install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev < /dev/null
 
     echo "Downloading Python ${new_version}"
-    wget ${url}
+    wget "${url}"
     echo "Decompressing file"
-    tar -Jxf ${file} < /dev/null
+    tar -Jxf "${file}" < /dev/null
 
-    cd Python-${new_version}
+    cd "Python-${new_version}"
 
     echo "Prepare the source for the installation"
     ./configure --enable-optimizations --prefix=/usr < /dev/null
     make < /dev/null
-    echo $("Install the new Python version " $new_version)
+    echo "(Install the new Python version $new_version)"
     make altinstall < /dev/null
 
     echo "Let's cleanup!"
     cd ..
     rm -rf "Python-$new_version"
-    rm -r ${file}
+    rm -r "${file}"
 
     echo "Let's install PIP"
     apt -qq install -y python3-pip < /dev/null
 
     echo "updating pip..."
-    python${py_main_version} -m pip install --upgrade pip
+    python"${py_main_version}" -m pip install --upgrade pip
 
     new_python_version=$(python -c 'import platform; print(platform.python_version())')
-    if [ $new_python_version = $new_version ]; then
+    if [ "$new_python_version" = "$new_version" ]; then
         echo "Version okay!"
     else
         echo "Okay, let's try to get your new installed to be the default!"
-        update-alternatives --install /usr/bin/python python /usr/bin/python${py_main_version} 1
-        update-alternatives --install /usr/bin/python3 python3 /usr/bin/python${py_main_version} 1
+        update-alternatives --install /usr/bin/python python /usr/bin/python"${py_main_version}" 1
+        update-alternatives --install /usr/bin/python3 python3 /usr/bin/python"${py_main_version}" 1
     fi
 
     clear
@@ -105,5 +105,5 @@ if [ -z "$1" ]; then
     echo "Sorry you did not provide a version number. (eg. 3.10.0)"
     echo "bash python.sh 3.10.0"
 else
-    install_python $1
+    install_python "$1"
 fi

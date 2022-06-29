@@ -36,8 +36,10 @@ wget -qO - https://raw.githubusercontent.com/tvdsluijs/sh-python-installer/main/
 
 
 ## Thanks to / Credits
+* [TonyLHansen](https://github.com/TonyLHansen) pointing out a sed line to beter specify a version and shellcheck
 * [Henry](https://e78com.com) helped out with some sizzle
 * [stephen-mw](https://github.com/stephen-mw) for adding some small but great additions
+* [Kevin Ku](https://www.pexels.com/nl-nl/foto/zwarte-gekweekte-brillen-voor-laptopcomputer-577585/)
 
 ## Versions
 * 1.0.2 / 20 April 2022 (some minor changed done by Stephen-mw)
