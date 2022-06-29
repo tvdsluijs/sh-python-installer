@@ -46,7 +46,7 @@ install_python () {
     echo "Your current Python version is: ${old_version}"
 
     echo "Updating & upgrade system"
-    apt -qq update && apt upgrade < /dev/null
+    apt -qq update && apt upgrade -y < /dev/null
 
     echo "Installing system essentials"
     apt -qq install -y wget build-essential checkinstall < /dev/null
