@@ -35,7 +35,12 @@ install_python () {
     file="Python-${new_version}.tar.xz"
     url="https://www.python.org/ftp/python/${new_version}/${file}"
 
-    old_version=$(python -c 'import platform; print(platform.python_version())')
+    #sometimes no python is installed at all!!
+    if [[ $(command -v python) ]]; then
+        old_version=$(python -c 'import platform; print(platform.python_version())')
+    else
+        old_version="0"
+    fi
 
     if [ "$(printf '%s\n' "$new_version" "$old_version" | sort -V | head -n1)" = "$new_version" ]; then
         echo "You are trying to install an older version than your current version!"
@@ -49,14 +54,12 @@ install_python () {
     apt -qq update && apt --yes --force-yes upgrade < /dev/null
 
     echo "Installing system essentials"
+    # sometimes the checkinstall package does not exists and then things break. I guess this is not the best solution, but don't know how to fix this.
     if [[ $(command -v checkinstall) ]]; then
-        echo "found"
         apt -qq install -y wget build-essential checkinstall < /dev/null
     else
-        echo "not found"
         apt -qq install -y wget build-essential < /dev/null
     fi
-
 
     echo "Installing Python essentials"
     apt -qq install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev < /dev/null
@@ -94,12 +97,20 @@ install_python () {
         update-alternatives --install /usr/bin/python3 python3 /usr/bin/python"${py_main_version}" 1
     fi
 
-    # clear
+    if [ "$new_python_version" = "$new_version" ]; then
+        echo "Version okay!"
+    else
+        echo "Okay, Still not good let's try something else!"
+        echo "alias python='/usr/bin/python${py_main_version}'" >> ~/.bashrc
+        source ~/.bashrc
+    fi
+
+    clear
     echo "All Done!"
     echo "Your new Python version should be ${new_version}"
     echo "You can check this yourself by 'python --version'"
     echo ""
-    echo "Do not forget to give me a tip/donation for my hard :-) work!"
+    echo "Do not forget to give me a tip/donation for my work!"
     echo "https://donorbox.org/tvdsluijs-github"
     echo ""
     echo "Any questions?"
