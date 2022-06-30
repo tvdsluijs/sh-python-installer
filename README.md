@@ -5,6 +5,10 @@
 
 An easy way to install a new Python version on a Raspberry Pi. Works also on Ubuntu!
 
+## Please read this article
+
+Please [read this](https://itheo.tech/stop-updating-python-on-your-raspberry-pi-os-or-ubuntu) article on why NOT to update Python on your OS
+
 ## Installation
 
 No real installation needed.
