@@ -5,9 +5,13 @@
 
 An easy way to install a new Python version on a Raspberry Pi. Works also on Ubuntu!
 
-## Please read this article
+## Be aware and please read this article
 
 Please [read this](https://itheo.tech/stop-updating-python-on-your-raspberry-pi-os-or-ubuntu) article on why NOT to update Python on your OS
+
+I will keep working on this script, security issues etc but will not roll out any new versions when it's needed for new python versions.
+
+The reason is obvious, use docker, don't change your OS Python version!
 
 ## Installation
 
