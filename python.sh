@@ -62,7 +62,7 @@ install_python () {
     fi
 
     echo "Installing Python essentials"
-    apt -qq install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev < /dev/null
+    apt -qq install -y build-essential zlib1g-dev uuid-dev liblzma-dev lzma-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev libbz2-dev < /dev/null
 
     echo "Downloading Python ${new_version}"
     wget "${url}"
@@ -73,9 +73,9 @@ install_python () {
 
     echo "Prepare the source for the installation"
     ./configure --enable-optimizations --prefix=/usr < /dev/null
-    make < /dev/null
+    make -j $(nproc) < /dev/null
     echo "(Install the new Python version $new_version)"
-    make altinstall < /dev/null
+    make altinstall -j $(nproc) < /dev/null
 
     echo "Let's cleanup!"
     cd ..
