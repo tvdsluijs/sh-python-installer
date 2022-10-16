@@ -26,6 +26,7 @@
 # sudo bash python.sh 3.11.0
 # or via github by
 # wget -qO - https://raw.githubusercontent.com/tvdsluijs/sh-python-installer/main/python.sh | sudo bash -s 3.10.0
+###########################
 
 set -euo pipefail
 

@@ -47,9 +47,11 @@ wget -qO - https://raw.githubusercontent.com/tvdsluijs/sh-python-installer/main/
 * [TonyLHansen](https://github.com/TonyLHansen) pointing out a sed line to beter specify a version and shellcheck
 * [Henry](https://e78com.com) helped out with some sizzle
 * [stephen-mw](https://github.com/stephen-mw) for adding some small but great additions
+* [Matthias Frank](https://github.com/MattMacs) making some improvements
 * [Kevin Ku](https://www.pexels.com/nl-nl/foto/zwarte-gekweekte-brillen-voor-laptopcomputer-577585/)
 
 ## Versions
+* 1.1.1 / 16 October 2022 (some great improvements by Matthias Frank)
 * 1.1.0 / 29 June 2022 (some minor but very good suggestions by TonyLHansen, created a Docker file to test it instant.)
 * 1.0.2 / 20 April 2022 (some minor changed done by Stephen-mw)
 * 1.0.1 / 21 Okt 2021 (Minor changes with Sudo)
