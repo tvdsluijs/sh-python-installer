@@ -20,12 +20,12 @@ No real installation needed.
 You can simply run this installer by
 
 ```bash
-wget -qO - https://raw.githubusercontent.com/tvdsluijs/sh-python-installer/main/python.sh | sudo bash -s [python_verion]
+wget -qO - https://raw.githubusercontent.com/tvdsluijs/sh-python-installer/main/python.sh | sudo bash -s [python_version]
 ```
 
-fill in the Python version you want at `[python_verion]`
+fill in the Python version you want at `[python_version]`
 
-So, if you want to install version 3.9.3 do:
+So, if you want to install version 3.9.6 do:
 
 ```bash
 wget -qO - https://raw.githubusercontent.com/tvdsluijs/sh-python-installer/main/python.sh | sudo bash -s 3.9.6
