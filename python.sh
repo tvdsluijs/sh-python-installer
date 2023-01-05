@@ -63,7 +63,7 @@ install_python () {
     fi
 
     echo "Installing Python essentials"
-    apt -qq install -y build-essential zlib1g-dev uuid-dev liblzma-dev lzma-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev libbz2-dev < /dev/null
+    apt -qq install -y build-essential zlib1g-dev tk-dev libncursesw5-dev libdb5.3-dev uuid-dev liblzma-dev lzma-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev libbz2-dev < /dev/null
 
     echo "Downloading Python ${new_version}"
     wget "${url}"
