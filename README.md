@@ -1,104 +1,41 @@
+[![version](https://img.shields.io/badge/version-1.1.1-yellow.svg)](https://semver.org)
 
-[![version](https://img.shields.io/badge/version-1.0.1-yellow.svg)](https://semver.org)
+# Easy Python Installer for Raspberry Pi & Ubuntu
 
-# Raspberry Pi / Ubuntu easy Python installer
+Install new Python versions on Raspberry Pi and Ubuntu effortlessly!
 
-An easy way to install a new Python version on a Raspberry Pi. Works also on Ubuntu!
+Updating Python on systems like Raspberry Pi and Ubuntu can often be a complex and problematic task. It usually involves navigating through various dependencies, dealing with potential conflicts, and ensuring compatibility with existing applications. This process can be particularly daunting for users who are not deeply familiar with system administration. Recognizing this challenge, my script offers a streamlined solution. With just a single line of command, you can effortlessly update your Python version to any release you desire. This one-liner script eliminates the usual hassles and intricacies associated with Python updates, making it accessible and hassle-free for everyone, regardless of their technical expertise.
 
-## Be aware and please read this article
-
-Please [read this](https://itheo.tech/stop-updating-python-on-your-raspberry-pi-os-or-ubuntu) article on why NOT to update Python on your OS
-
-I will keep working on this script, security issues etc but will not roll out any new versions when it's needed for new python versions.
-
-The reason is obvious, use docker, don't change your OS Python version!
+## Important: Read Before Using
+**Warning**: Updating Python on your OS can lead to system issues. Please [read this article](https://itheo.tech/stop-updating-python-on-your-raspberry-pi-os-or-ubuntu) for details.
 
 ## Installation
 
-No real installation needed.
-
-You can simply run this installer by
+Run the installer with the command:
 
 ```bash
 wget -qO - https://raw.githubusercontent.com/tvdsluijs/sh-python-installer/main/python.sh | sudo bash -s [python_version]
 ```
 
-fill in the Python version you want at `[python_version]`
+Replace `[python_version]` with your desired version, for example:
+- For Python 3.9.6: `sudo bash -s 3.9.6`
+- For Python 3.10.0: `sudo bash -s 3.10.0`
+- For Python 3.11 Alpha: `sudo bash -s 3.11.0a1`
 
-So, if you want to install version 3.9.6 do:
+## Acknowledgements
+- TonyLHansen, Henry, stephen-mw, Matthias Frank, Kevin Ku: Contributions and support.
 
-```bash
-wget -qO - https://raw.githubusercontent.com/tvdsluijs/sh-python-installer/main/python.sh | sudo bash -s 3.9.6
-```
-on your Raspberry Pi.
+## Version History
+- 1.1.1 / 16 Oct 2022 - Improvements by Matthias Frank
+- 1.1.0 / 29 Jun 2022 - Suggestions by TonyLHansen, Docker file added
+- 1.0.2 / 20 April 2022 - Some minor changed done by Stephen-mw
+-  1.0.1 / 21 Okt 2021 - Minor changes with Sudo
+-  1.0.0 / 26 sept 2021 - First Release
 
-For 3.10 do
-```bash
-wget -qO - https://raw.githubusercontent.com/tvdsluijs/sh-python-installer/main/python.sh | sudo bash -s 3.10.0
-```
+**NOTE**: This script updates your Raspberry Pi OS. If you do not wish to update, **do not use this script**.
 
-For 3.11 **Alpha** do
-```bash
-wget -qO - https://raw.githubusercontent.com/tvdsluijs/sh-python-installer/main/python.sh | sudo bash -s 3.11.0a1
-```
+## License
+Licensed under the [MIT License](https://choosealicense.com/licenses/mit/). Copyright (c) 2022 [itheo.tech](https://itheo.tech/).
 
-
-## Thanks to / Credits
-* [TonyLHansen](https://github.com/TonyLHansen) pointing out a sed line to beter specify a version and shellcheck
-* [Henry](https://e78com.com) helped out with some sizzle
-* [stephen-mw](https://github.com/stephen-mw) for adding some small but great additions
-* [Matthias Frank](https://github.com/MattMacs) making some improvements
-* [Kevin Ku](https://www.pexels.com/nl-nl/foto/zwarte-gekweekte-brillen-voor-laptopcomputer-577585/)
-
-## Versions
-* 1.1.1 / 16 October 2022 (some great improvements by Matthias Frank)
-* 1.1.0 / 29 June 2022 (some minor but very good suggestions by TonyLHansen, created a Docker file to test it instant.)
-* 1.0.2 / 20 April 2022 (some minor changed done by Stephen-mw)
-* 1.0.1 / 21 Okt 2021 (Minor changes with Sudo)
-* 1.0.0 / 26 sept 2021 (First Release)
-
-
----
-**NOTE**
-
-This script updates your Raspberry Pi OS !!! If you don't want to update the OS DO NOT USE THIS SCRIPT!
-
----
-
-## License & Copyrights
-
-Copyright (c) 2022 [itheo.tech](https://itheo.tech/) / Theo van der Sluijs
-
-
-
-### MIT License
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-Get your copy of the [MIT](https://choosealicense.com/licenses/mit/) License.
-
-
-## Support
-
-For support, go to [itheo.tech](https://itheo.tech/) and contact me!
-
-
-## Donations
-
-Please do not forget to donate!
-https://donorbox.org/tvdsluijs-github
+## Support & Donations
+For support, visit [itheo.tech](https://itheo.tech/). Contributions are welcome at [DonorBox](https://donorbox.org/tvdsluijs-github).
