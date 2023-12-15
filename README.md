@@ -17,10 +17,10 @@ Run the installer with the command:
 wget -qO - https://raw.githubusercontent.com/tvdsluijs/sh-python-installer/main/python.sh | sudo bash -s [python_version]
 ```
 
-Replace `[python_version]` with your desired version, for example:
-- For Python 3.9.6: `sudo bash -s 3.9.6`
-- For Python 3.10.0: `sudo bash -s 3.10.0`
-- For Python 3.11 Alpha: `sudo bash -s 3.11.0a1`
+Replace `[python_version]` with your desired version, for example (left some code out for readability):
+- For Python 3.9.6: `wget ..... sudo bash -s 3.9.6`
+- For Python 3.10.0: `wget ..... sudo bash -s 3.10.0`
+- For Python 3.11 Alpha: `wget ..... sudo bash -s 3.11.0a1`
 
 ## Acknowledgements
 - TonyLHansen, Henry, stephen-mw, Matthias Frank, Kevin Ku: Contributions and support.
