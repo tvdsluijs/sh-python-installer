@@ -54,11 +54,11 @@ install_python() {
     fi
 
     # Cleanup function to ensure temporary files are removed
-    cleanup() {
-        echo "Cleaning up temporary files..."
-        rm -rf "Python-${new_version}" "${file}"
-    }
-    trap cleanup EXIT
+    # cleanup() {
+    #     echo "Cleaning up temporary files..."
+    #     rm -rf "Python-${new_version}" "${file}"
+    # }
+    # trap cleanup EXIT
 
     # Display the introductory message
     clear
