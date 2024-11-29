@@ -54,11 +54,11 @@ install_python() {
     fi
 
     # Cleanup function to ensure temporary files are removed
-    # cleanup() {
-    #     echo "Cleaning up temporary files..."
-    #     rm -rf "Python-${new_version}" "${file}"
-    # }
-    # trap cleanup EXIT
+    cleanup() {
+        echo "Cleaning up temporary files..."
+        rm -rf "Python-${new_version}" "${file}"
+    }
+    trap cleanup EXIT
 
     # Display the introductory message
     clear
@@ -75,7 +75,10 @@ install_python() {
     echo "💡 Tip: Add '-v' for verbose mode to see detailed logs."
     echo ""
     echo "Press any key to continue..."
-    read -r -n1  # Wait for user input
+    read -r -n1 -t 10  # Wait for 10 seconds for user input
+    if [[ $? -ne 0 ]]; then
+        echo "No input provided. Proceeding..."
+    fi
 
     # Dynamically check Python version, prioritizing python3
     if [[ $(command -v python3) ]]; then
