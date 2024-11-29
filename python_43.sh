@@ -120,7 +120,7 @@ install_python() {
     echo "   This may take some time depending on the updates required."
     echo ""
     echo "Do you want to proceed? (Y/N)"
-    read -r user_confirmation
+    read -r user_confirmation < /dev/tty
     if [[ ! "$user_confirmation" =~ ^[Yy]$ ]]; then
         echo ""
         echo "✅ You chose not to proceed. Exiting the script."
