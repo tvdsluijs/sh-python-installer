@@ -10,7 +10,7 @@
 
 Updating Python on systems like Raspberry Pi and Ubuntu can be a daunting task, filled with dependency conflicts and compatibility issues. This script simplifies the process, enabling you to install or update any Python version easily with **just one command**. It’s perfect for developers, hobbyists, and system administrators.
 
-![Python Installer](sh-python-installer.png)
+![Python Installer](https://raw.githubusercontent.com/tvdsluijs/sh-python-installer/refs/heads/main/sh-python-installer.jpg)
 
 💡 **Why this script?**
 - No more manual dependency hunting or installation errors.
