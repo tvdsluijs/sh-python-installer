@@ -219,8 +219,8 @@ install_python() {
     echo "###############################################"
     echo "#   Setting up new Python version as default  #"
     echo "###############################################"
-    update-alternatives --install /usr/bin/python python /usr/bin/python"${py_main_version}" 1
-    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python"${py_main_version}" 1
+    update-alternatives --install /usr/bin/python python /usr/bin/python"${py_main_version}" 1 2>/dev/null
+    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python"${py_main_version}" 1 2>/dev/null
 
     # Fallback alias setup
     if [[ $(python"${py_main_version}" --version) != "${new_version}" ]]; then
