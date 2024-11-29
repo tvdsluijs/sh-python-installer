@@ -119,7 +119,7 @@ install_python() {
     echo "⚠️  This script will now update and upgrade your system."
     echo "   This may take some time depending on the updates required."
     echo ""
-    echo "Do you want to proceed? (Y/N)"
+    echo "Do you want to proceed? (Y/N) + Enter"
     read -r user_confirmation < /dev/tty
     if [[ ! "$user_confirmation" =~ ^[Yy]$ ]]; then
         echo ""
