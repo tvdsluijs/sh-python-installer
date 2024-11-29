@@ -75,9 +75,8 @@ install_python() {
     echo "💡 Tip: Add '-v' for verbose mode to see detailed logs."
     echo ""
     echo "Press any key to continue..."
-    read -r -n1 -t 10  # Wait for 10 seconds for user input
-    if [[ $? -ne 0 ]]; then
-        echo "No input provided. Proceeding..."
+    if ! read -r -n1 -t 10; then
+        echo "No input detected. Proceeding automatically..."
     fi
 
     # Dynamically check Python version, prioritizing python3
